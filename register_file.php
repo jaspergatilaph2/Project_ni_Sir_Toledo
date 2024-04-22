@@ -3,9 +3,9 @@ include "config.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_POST["email"]) || !isset($_POST["fullname"]) || !isset($_POST["contact"]) || !isset($_POST["password"]) || !isset($_POST["confirm_password"])) {
-        echo "<script>alert('Error: All form fields are required!');</script>";
-        header('Location: login.php');
-        exit();
+        echo "<script>alert('Error: All form fields are required!'); windows.location.href = 'login.php'</script>";
+        // header('Location: login.php');
+        // exit();
     }
 
     $email = $_POST['email'];
