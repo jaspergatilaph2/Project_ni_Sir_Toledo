@@ -382,7 +382,6 @@ require "register_file.php";
               }
             }
             ?>
-
             <h5 class="title-box-account">Create an account</h5>
             <div class="form-group">
               <label for="email">Email</label>
