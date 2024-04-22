@@ -375,13 +375,6 @@ require "register_file.php";
         <div class="col-11 col-sm-5 col-md-5 col-lg-5 col-xl-5  float-right">
 
           <form class="notclient" action="" method="post">
-            <?php
-            if (isset($err)) {
-              foreach ($err as $error) {
-                echo '<span class="error-msg">' . $error . '</span>';
-              }
-            }
-            ?>
             <h5 class="title-box-account">Create an account</h5>
             <div class="form-group">
               <label for="email">Email</label>
@@ -398,6 +391,8 @@ require "register_file.php";
             <div class="form-group">
               <label for="password">Password</label>
               <input class="form-control email" type="password" name="password" placeholder="Enter your password?" />
+              <input type="checkbox" name="showPassword" id="showPassword" style="width: 15px; height: 15px;">
+              <span class="checkmark"></span> Show Password
             </div>
             <div class="form-group">
               <label for="cpassword">Confirm Password</label>
