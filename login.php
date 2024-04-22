@@ -375,6 +375,14 @@ require "register_file.php";
         <div class="col-11 col-sm-5 col-md-5 col-lg-5 col-xl-5  float-right">
 
           <form class="notclient" action=" " method="post">
+            <?php
+            if (isset($err)) {
+              foreach ($err as $error) {
+                echo '<span class="error-msg">' . $error . '</span>';
+              }
+            }
+            ?>
+
             <h5 class="title-box-account">Create an account</h5>
             <div class="form-group">
               <label for="email">Email</label>
