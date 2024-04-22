@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT `id`, `email`, `fullname`, `contact`, `password` FROM `users` WHERE `email` = '$email'";
 
     // Execute SQL query
-    $result = $conn->query($sql);
+    $result = $connection->query($sql);
 
     if ($result->num_rows > 0) {
         // User found, check password
@@ -17,8 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = $row['password']; // Get hashed password from database
         if (password_verify($password, $hashed_password)) {
             // Password matches, login successful
-            echo "Login successful! Welcome " . $row['fullname'];
+            // echo "Login successful! Welcome " . $row['fullname'];
             // You can set session variables or redirect the user to another page here
+            header("location: index.php");
+            exit();
         } else {
             // Password does not match
             echo "Incorrect password!";

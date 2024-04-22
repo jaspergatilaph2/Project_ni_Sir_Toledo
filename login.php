@@ -352,7 +352,7 @@ require "register_file.php";
 
         <div class="col-11 col-sm-5 col-md-5 col-lg-5 col-xl-5 float-left ">
 
-          <form class="loginclient" action=" " method="post">
+          <form class="loginclient" action="login_file.php" method="post">
             <h5 class="title-box-login">I'm already a customer</h5>
             <div class="form-group">
               <label for="email">Email</label>
