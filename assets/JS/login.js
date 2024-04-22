@@ -1,15 +1,9 @@
-
-
-
-document.addEventListener("DOMContentLoaded", function()
-{
-  document.querySelector(".spinner-wrapper").style.opacity= "0";
-  setTimeout(function(){
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".spinner-wrapper").style.opacity = "0";
+  setTimeout(function () {
     document.querySelector(".spinner-wrapper").style.display = "none";
-  }, 2500); 
+  }, 2500);
 });
-
-
 
 //Menu-Modal-Dropdown
 function toggleDropdownMenu() {
@@ -57,7 +51,6 @@ function toggleDropdownMenu5() {
   }
 }
 
-
 // redirect index
 const returnbtn = document.querySelector(".col-md-2");
 function redirectBtnindex() {
@@ -74,3 +67,26 @@ const actionbtn = document.querySelector(
 function redirectBtnlogin() {
   window.location.href = "login.php";
 }
+
+// Get the checkbox and password input element
+const checkbox = document.getElementById("showPassword");
+const passwordInput = document.getElementById("password");
+
+// Add event listener to checkbox
+checkbox.addEventListener("change", function () {
+  // If checkbox is checked, show password; otherwise, hide it
+  if (this.checked) {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+});
+
+document.getElementById("showConfirmPassword").addEventListener("change", function() {
+  var confirmPasswordInput = document.getElementById("confirmpassword");
+  if (this.checked) {
+    confirmPasswordInput.type = "text";
+  } else {
+    confirmPasswordInput.type = "password";
+  }
+});

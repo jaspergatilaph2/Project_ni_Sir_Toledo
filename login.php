@@ -390,13 +390,15 @@ require "register_file.php";
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input class="form-control email" type="password" name="password" placeholder="Enter your password?" />
+              <input class="form-control email" type="password" name="password" id="password" placeholder="Enter your password?" />
               <input type="checkbox" name="showPassword" id="showPassword" style="width: 15px; height: 15px;">
               <span class="checkmark"></span> Show Password
             </div>
             <div class="form-group">
               <label for="cpassword">Confirm Password</label>
-              <input class="form-control email" type="password" name="confirm_password" placeholder="Confirm your password?" />
+              <input class="form-control email" type="password" name="confirm_password" id="confirmpassword" placeholder="Confirm your password?" />
+              <input type="checkbox" name="showPassword" id="showConfirmPassword" style="width: 15px; height: 15px;">
+              <span class="checkmark"></span> Show Password
             </div>
             <a href="#">Doubts? <a id="linkfale" href="">contact us</a></a>
             <button type="submit" class="btn btn-primary mx-auto mt-3 w-50" id="btn2">Register</button>
