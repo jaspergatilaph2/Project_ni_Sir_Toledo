@@ -23,11 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // Password does not match
-            echo "Incorrect password!";
+            // echo "Incorrect password!";
+            $err[] = "Message: Incorrect Password!!!";
         }
     } else {
         // User not found
-        echo "User not found!";
+        // echo "User not found!";
+        $err[] = "Message: User not found!!!!";
     }
 }
 

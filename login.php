@@ -1,6 +1,6 @@
 <?php
-include "config.php";
 require "register_file.php";
+require "login_file.php"
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -352,19 +352,27 @@ require "register_file.php";
 
         <div class="col-11 col-sm-5 col-md-5 col-lg-5 col-xl-5 float-left ">
 
-          <form class="loginclient" action="login_file.php" method="post">
+          <form class="loginclient" action="" method="post">
             <h5 class="title-box-login">I'm already a customer</h5>
+            <?php
+            // Initialize $err variable
+            $err = isset($err) ? $err : array();
+            ?>
+
+            <?php foreach ($err as $error) : ?>
+              <div class="alert alert-danger" role="alert">
+                <?php echo $error; ?>
+              </div>
+            <?php endforeach; ?>
             <div class="form-group">
               <label for="email">Email</label>
               <input class="form-control email" type="text" name="email" placeholder="Email" />
             </div>
             <div class="form-group">
               <label for="Password">Password</label>
-              <input class="form-control senha" type="password" name="password" placeholder="password" />
-            </div>
-            <div class="form-check">
-              <label class="form-check-label font-weight-normal" for="remember">remember me</label>
-              <input class="form-check-input form-control" type="checkbox" name="remember" />
+              <input class="form-control senha" type="password" name="password" id="emailpassword" placeholder="password" />
+              <input type="checkbox" name="showPassword" id="showEmailPassword" style="width: 15px; height: 15px;">
+              <span class="checkmark"></span> Show Password
             </div>
             <a href="#">Forgot your password?</a>
             <button type="submit" class="btn btn-primary mx-auto mt-3 w-50" id="btn1">Login</button>
@@ -376,17 +384,6 @@ require "register_file.php";
 
           <form class="notclient" action="" method="post">
             <h5 class="title-box-account">Create an account</h5>
-            <?php
-            // Display errors if any
-            if (isset($err)) {
-              // foreach($error as $err){
-              //    echo '<span class="error-msg">'.$err.'</span>';
-              // }
-              foreach ($err as $error) {
-                echo '<span class="error-msg">' . $error . '</span>';
-              }
-            }
-            ?>
             <div class="form-group">
               <label for="email">Email</label>
               <input class="form-control email" type="text" name="email" placeholder="Enter your email?" />

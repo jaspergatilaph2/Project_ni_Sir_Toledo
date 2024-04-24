@@ -90,3 +90,13 @@ document.getElementById("showConfirmPassword").addEventListener("change", functi
     confirmPasswordInput.type = "password";
   }
 });
+
+
+document.getElementById("showEmailPassword").addEventListener("change", function(){
+  var show = document.getElementById("emailpassword");
+  if(this.checked){
+    show.type = "text";
+  }else{
+    show.type = "password";
+  }
+})
