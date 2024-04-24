@@ -1,6 +1,5 @@
 <?php
-require "register_file.php";
-require "login_file.php"
+require "login_file.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -383,6 +382,9 @@ require "login_file.php"
         <div class="col-11 col-sm-5 col-md-5 col-lg-5 col-xl-5  float-right">
 
           <form class="notclient" action="" method="post">
+            <?php
+            require "register_file.php";
+            ?>
             <h5 class="title-box-account">Create an account</h5>
             <?php
             // Initialize $err variable
