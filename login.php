@@ -376,6 +376,17 @@ require "register_file.php";
 
           <form class="notclient" action="" method="post">
             <h5 class="title-box-account">Create an account</h5>
+            <?php
+            // Display errors if any
+            if (isset($err)) {
+              // foreach($error as $err){
+              //    echo '<span class="error-msg">'.$err.'</span>';
+              // }
+              foreach ($err as $error) {
+                echo '<span class="error-msg">' . $error . '</span>';
+              }
+            }
+            ?>
             <div class="form-group">
               <label for="email">Email</label>
               <input class="form-control email" type="text" name="email" placeholder="Enter your email?" />
@@ -401,7 +412,7 @@ require "register_file.php";
               <span class="checkmark"></span> Show Password
             </div>
             <a href="#">Doubts? <a id="linkfale" href="">contact us</a></a>
-            <button type="submit" class="btn btn-primary mx-auto mt-3 w-50" id="btn2">Register</button>
+            <button type="submit" class="btn btn-primary mx-auto mt-3 w-50" id="btn2" name="submit">Register</button>
           </form>
 
         </div>
