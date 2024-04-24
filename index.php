@@ -1,5 +1,6 @@
 <?php
 include "config.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -129,7 +130,22 @@ include "config.php";
               <ion-icon name="person-circle-outline"></ion-icon>
             </span>
             <div class="text-icon">
-              Login or Register
+              <?php
+
+              // Display login status
+              if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+                // If the user is logged in, extract and display their first and second names
+                $fullName = $_SESSION['fullName'];
+                $names = explode(' ', $fullName); // Split full name into an array of names
+                $firstName = $names[0]; // Extracting the first name
+                $secondName = isset($names[1]) ? $names[1] : ''; // Extracting the second name if available
+                echo "<span style='font-size: small;'>Welcome, " . htmlspecialchars($firstName) . " " . htmlspecialchars($secondName) . "</span>";
+              } else {
+                // If the user is not logged in, display Login or Register
+                echo "Login or Register";
+              }
+
+              ?>
             </div>
           </div>
 
@@ -494,7 +510,7 @@ include "config.php";
                   <div class="category-item-title">
                     <strong>Lorem ipsum dolor</strong>
                     <span>
-                      30 Lorem ipsum dolor  
+                      30 Lorem ipsum dolor
                     </span>
                   </div>
                 </div>
@@ -1472,7 +1488,7 @@ include "config.php";
               <div class="card-body">
                 <div class="mb-3">
                   <a class="title-text" target="_blank" onclick="redirectProductpage()" href="#">Colorful iGame GeForce RTX 4060 TI<div> Ultra W OC 8GB-V Graphics Card
-</div></a>
+                    </div></a>
                   <div class="star">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -1619,7 +1635,7 @@ include "config.php";
                 </li>
               </ul>
             </div>
-            
+
             <div class="col-lg-3 col-md-3 mb-4 mb-lg-0">
               <h5 class="text-uppercase mb-4">Partnership</h5>
               <ul class="list-unstyled">

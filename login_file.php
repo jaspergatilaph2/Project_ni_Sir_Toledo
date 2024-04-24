@@ -1,6 +1,6 @@
 <?php
 include "config.php";
-
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -17,20 +17,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = $row['password']; // Get hashed password from database
         if (password_verify($password, $hashed_password)) {
             // Password matches, login successful
-            // echo "Login successful! Welcome " . $row['fullname'];
-            // You can set session variables or redirect the user to another page here
+            // Set session variables
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['fullName'] = $row['fullname'];
+            
+            // Redirect the user to another page
             header("location: index.php");
             exit();
         } else {
             // Password does not match
-            // echo "Incorrect password!";
             $err[] = "Message: Incorrect Password!!!";
         }
     } else {
         // User not found
-        // echo "User not found!";
         $err[] = "Message: User not found!!!!";
     }
 }
-
-?>
