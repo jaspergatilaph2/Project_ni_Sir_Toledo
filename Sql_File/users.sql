@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2024 at 03:54 AM
+-- Generation Time: Apr 24, 2024 at 01:16 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `online_tech_store`
+-- Database: `tech_stored`
 --
 
 -- --------------------------------------------------------
@@ -28,9 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `id` int UNSIGNED NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `contact` varchar(20) DEFAULT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -38,8 +39,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'Jaspergatilaph', 'johnjaspergatila@yahoo.com', '$2y$10$Lx9dSp.MuVSZthpoiRVXMewrR8GO/1Wtas9C562h8pnSLeka6MPpe');
+INSERT INTO `users` (`id`, `email`, `fullname`, `contact`, `password`) VALUES
+(22, 'johnjaspergatila@yahoo.com', 'John Jasper Pelias Gatila', '09164277903', '$2y$10$VmTYmg0hqTDKCIFzj4bXRem.cxwrLByhCdmxsZ8qoedSY4fzpm7NK');
 
 --
 -- Indexes for dumped tables
@@ -59,7 +60,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

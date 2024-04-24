@@ -384,6 +384,15 @@ require "login_file.php"
 
           <form class="notclient" action="" method="post">
             <h5 class="title-box-account">Create an account</h5>
+            <?php
+            // Initialize $err variable
+            $err = isset($err) ? $err : array();
+            ?>
+            <?php foreach ($err as $error) : ?>
+              <div class="alert alert-danger" role="alert">
+                <?php echo $error; ?>
+              </div>
+            <?php endforeach; ?>
             <div class="form-group">
               <label for="email">Email</label>
               <input class="form-control email" type="text" name="email" placeholder="Enter your email?" />
