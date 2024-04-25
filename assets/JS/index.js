@@ -156,7 +156,7 @@ function redirectProductpage() {
 
 const actionCheckout = document.querySelector(".iconscart");
 function redirectIconCheckout() {
-  window.location.href = "Cart.html";
+  window.location.href = "cart.php";
 }
 
 

@@ -75,12 +75,31 @@ session_start();
                   <p>You can unsubscribe at any time. To do this, please find <br />
                     our contact information in the legal notice</p>
                 </div>
-                <div class="input-group">
-                  <input type="email" class="form-control" placeholder="Enter your email" required>
-                  <div class="input-group-append">
-                    <input type="submit" class="btn btn-primary" value="Subscribe">
+                <form action="" method="post">
+                  <?php
+                  require "subscriber.php";
+                  ?>
+                  <?php
+                  // Initialize $err variable if it's not set
+                  if (!isset($err)) {
+                    $err = array();
+                  }
+                  ?>
+
+                  <?php foreach ($err as $error) : ?>
+                    <div class="alert alert-danger" role="alert">
+                      <?php echo $error; ?>
+                    </div>
+                  <?php endforeach; ?>
+                  <div class="input-group">
+                    <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                    <div class="input-group-append">
+                      <input type="submit" class="btn btn-primary" value="Subscribe">
+                    </div>
                   </div>
-                </div>
+                </form>
+
+
               </div>
             </div>
           </div>

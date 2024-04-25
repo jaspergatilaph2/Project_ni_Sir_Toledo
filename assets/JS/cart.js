@@ -51,7 +51,7 @@ function toggleDropdownMenu4() {
 // redirect index
 const returnbtn = document.querySelector(".col-md-2");
 function redirectBtnindex() {
-  window.location.href = "index.html";
+  window.location.href = "index.php";
 }
 
 
@@ -63,6 +63,6 @@ const actionbtn = document.querySelector(
   ".account-login"
 );
 function redirectBtnlogin() {
-  window.location.href = "Login.html";
+  window.location.href = "login.php";
 }
 
