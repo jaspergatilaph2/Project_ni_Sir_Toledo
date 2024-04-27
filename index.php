@@ -122,7 +122,6 @@ session_start();
     <section class="navbar navbar-expand-lg" id="navbar1">
       <div class="col-md-2" onclick="redirectBtnindex()" href="index.php">
         <img src="../Online_Tech_Store_v1/assets/IMG/IMG/Logo/Logo_6.png" alt="" width="" height="90" />
-        <!-- assets/IMG/IMG/Logo/ON_SHOP.png -->
       </div>
       <button class="navbar-toggler d-lg-none" id="main">
         <span class="navbar-toggler-icon">
@@ -270,7 +269,7 @@ session_start();
               <a href="#">PC Build</a>
             </div>
             <div class="modal-line" onclick="toggleDropdownMenu3()">
-              <a href="#">Iphones</a>
+              <a href="#">Apple Iphone</a>
               <i class="bi bi-chevron-down" id="setmodal3"></i>
               <ul id="dropdown-menu3" class="sidebar-dropdown-menu" style="display: none;">
                 <li class="sidebar-dropdown-item">

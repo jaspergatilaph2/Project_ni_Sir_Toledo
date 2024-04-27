@@ -309,7 +309,7 @@ require "login_file.php";
             <li class="menu-category" id="Iphone">
               <span>
                 <i class="bi bi-phone" id="Iphones"></i>
-                <a href="#" class="menu-title">Iphones</a>
+                <a href="#" class="menu-title">Apple Iphone</a>
                 <i class="bi bi-chevron-down" id="Smartphonesown"></i>
               </span>
               <ul class="dropdown-list">
