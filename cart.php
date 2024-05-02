@@ -10,6 +10,10 @@ include "config.php";
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Online Tech Store</title>
 
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="../Online_Tech_Store_v1/assets/Favicon/icons8-online-shop-96.png" type="image/x-icon">
+  <!-- FAVICON -->
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
   <!-- Bootstrap CSS -->
@@ -44,7 +48,7 @@ include "config.php";
   <header>
     <!-- START ALERT TOP BAR -->
     <div class="alert alert-primary" role="alert">
-      <img src="assets/IMG/IMG/Icons/logo-pix-icone-256.png" width="20" height="20" />
+      <img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/logo-pix-icone-256.png" width="20" height="20" />
       <span>Pay at PIX and get a 20% discount!</span>
     </div>
     <!-- END ALERT TOP BAR -->
@@ -98,10 +102,10 @@ include "config.php";
           <div class="modal-header">
             <div class="account-login">
               <span>
-                <ion-icon name="person-circle-outline" onclick="redirectBtnlogin()" href="Login.html"></ion-icon>
+                <ion-icon name="person-circle-outline" onclick="redirectBtnlogin()" href="#"></ion-icon>
               </span>
             </div>
-            <div class="text menu-dropdown" onclick="redirectBtnlogin()" href="Login.html">
+            <div class="text menu-dropdown" onclick="redirectBtnlogin()" href="#">
               <span class="msg" onclick="redirectBtnlogin()" href="#">Welcome to</span>
               <a class="link" onclick="redirectBtnlogin()" href="#">Login or Register</a>
             </div>
@@ -231,7 +235,7 @@ include "config.php";
                   <span></span>
                 </div>
                 <div class="qtdstart col-2">
-                  <span>Amount</span>
+                  <span>Quantity</span>
                 </div>
                 <div class="pricestart col-1">
                   <span class="mr-1">Price</span>
@@ -242,99 +246,100 @@ include "config.php";
 
           <div class="d-flex justify-content-between mt-3 pe-5 infoproduto">
             <div class="d-flex flex-row">
-              <img class="rounded" src="assets/IMG/IMG/Products/PLACADEVIDEO2.jpg" width="80" height="80" />
+              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/IMG/Products/iPhone_13.webp" width="80" height="80" />
               <div class="ml-2 ps-3">
                 <span class="d-block titledesktop">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS
                   <br />
-                  - Vermelho</span>
+                  - Red</span>
                 <div class="mt-2">
-                  <span class="coddesktop">Código 234662100</span><br />
+                  <span class="coddesktop">Code 234662100</span><br />
                 </div>
                 <div class="mt-1 mb-2">
-                  <span class="entrega mt-4">Vendido e entregue por
-                    <img src="assets/IMG/ON SHOP.jpg" width="70" alt="" /></span>
+                  <span class="entrega mt-4">Sold and delivered by
+                    <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
                 </div>
               </div>
             </div>
             <input id="form7" min="0" name="quantity" value="2" type="number" class="form-control mb-5" style="width: 50px; height: 35px" />
             <div class="d-flex flex-row mb-5">
-              <span class="ml-5">R$ 900,00</span>
+              <span class="ml-5">&#8369; 42,990.00</span>
               <i class="fa fa-trash-o ml-3 text-black-50"></i>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 pe-5 infoproduto">
             <div class="d-flex flex-row">
-              <img class="rounded" src="assets/IMG/IMG/Products/PLACADEVIDEO2.jpg" width="80" height="80" />
+              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/IMG/Products/vivo v30.png" width="80" height="80" />
+              <!-- assets/IMG/IMG/Products/PLACADEVIDEO2.jpg -->
               <div class="ml-2 ps-3">
-                <span class="d-block titledesktop">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS
+                <span class="d-block titledesktop">vivo V30 Lite unveiled with a 120Hz screen and 50MP selfie camera
                   <br />
-                  - Vermelho</span>
+                  - Black</span>
                 <div class="mt-2">
-                  <span class="coddesktop">Código 234662100</span><br />
+                  <span class="coddesktop">Code 234662100</span><br />
                 </div>
                 <div class="mt-1 mb-2">
-                  <span class="entrega mt-4">Vendido e entregue por
-                    <img src="assets/IMG/ON SHOP.jpg" width="70" alt="" /></span>
+                  <span class="entrega mt-4">Sold and delivered by
+                    <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
                 </div>
               </div>
             </div>
             <input id="form5" min="0" name="quantity" value="2" type="number" class="form-control mb-5" style="width: 50px; height: 35px" />
             <div class="d-flex flex-row mb-5">
-              <span class="ml-5">R$ 900,00</span>
+              <span class="ml-5">&#8369; 21,949.00</span>
               <i class="fa fa-trash-o ml-3 text-black-50"></i>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 pe-5 infoproduto">
             <div class="d-flex flex-row">
-              <img class="rounded" src="assets/IMG/IMG/Products/PLACADEVIDEO2.jpg" width="80" height="80" />
+              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/b641d84456.webp" width="80" height="80" />
               <div class="ml-2 ps-3">
-                <span class="d-block titledesktop">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS
+                <span class="d-block titledesktop">Uncharted Legacy of Thieves Collection Remastered Game PS5
                   <br />
-                  - Vermelho</span>
+                  - PS5 Game</span>
                 <div class="mt-2">
-                  <span class="coddesktop">Código 234662100</span><br />
+                  <span class="coddesktop">Code 234662100</span><br />
                 </div>
                 <div class="mt-1 mb-2">
-                  <span class="entrega mt-4">Vendido e entregue por
-                    <img src="assets/IMG/ON SHOP.jpg" width="70" alt="" /></span>
+                  <span class="entrega mt-4">Sold and delivered by
+                    <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
                 </div>
               </div>
             </div>
             <input id="form6" min="0" name="quantity" value="2" type="number" class="form-control mb-5" style="width: 50px; height: 35px" />
             <div class="d-flex flex-row mb-5">
-              <span class="ml-5">R$ 900,00</span>
+              <span class="ml-5">&#8369; 484,00</span>
               <i class="fa fa-trash-o ml-3 text-black-50"></i>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 pe-5 infoproduto">
             <div class="d-flex flex-row">
-              <img class="rounded" src="assets/IMG/IMG/Products/PLACADEVIDEO2.jpg" width="80" height="80" />
+              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/monitor-gamer-aoc-led-24-full-hd-widescreen-hero-g2460pf-b3ded940.webp" width="80" height="80" />
               <div class="ml-2 ps-3">
-                <span class="d-block titledesktop">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS
-                  <br />- Vermelho</span>
+                <span class="d-block titledesktop">Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5
+                  <br />- Monitor</span>
                 <div class="mt-2">
-                  <span class="coddesktop">Código 234662100</span><br />
+                  <span class="coddesktop">Code 234662100</span><br />
                 </div>
                 <div class="mt-1 mb-2">
-                  <span class="entrega mt-4">Vendido e entregue por
-                    <img src="assets/IMG/ON SHOP.jpg" width="70" alt="" /></span>
+                  <span class="entrega mt-4">Sold and delivered by
+                    <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
                 </div>
               </div>
             </div>
             <input id="form8" min="0" name="quantity" value="2" type="number" class="form-control mb-5" style="width: 50px; height: 35px" />
             <div class="d-flex flex-row mb-5">
-              <span class="ml-5">R$ 900,00</span>
+              <span class="ml-5">&#8369; 15.792,42</span>
               <i class="fa fa-trash-o ml-3 text-black-50"></i>
             </div>
           </div>
 
-          <div class="container mt-2 p-3 desktop">
+          <!-- <div class="container mt-2 p-3 desktop">
             <div class="row">
               <div class="d-flex align-items-center mb-2">
-                <span class="pe-2">Frete para</span>
+                <span class="pe-2">Shipping</span>
                 <input class="" maxlength="9" name="CEP" placeholder="00000-00" style="
                       width: 140px;
                       height: 40px;
@@ -346,7 +351,7 @@ include "config.php";
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="d-flex align-items-center justify-content-end pe-3 destoptotal">
             <div class="row">
@@ -357,23 +362,24 @@ include "config.php";
 
                 <span class="col-4 mt-3">
                   <div class="total">
-                    <span class="d-flex justify-content-end">R$ 2.796,00 ou</span>
-                    <span class="d-flex justify-content-end">R$ 1.796,00 a vista</span>
+                    <span class="d-flex justify-content-end">&#8369; 2.796,00</span>
+                    <span class="d-flex justify-content-end">&#8369; 1.796,00 at sight</span>
                   </div>
                 </span>
               </div>
 
               <div class="d-flex justify-content-end">
                 <span class="mt-3 col-3">
-                  <img src="assets/IMG/IMG/Icons/elo.svg" alt="" />
-                  <img src="assets/IMG/IMG/Icons/master.svg" alt="" />
+                  <img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/elo.svg" alt="" />
+                  <img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/master.svg" alt="" />
+                  <!-- assets/IMG/IMG/Icons/master.svg -->
                 </span>
                 <span class="totaldesktopaymentcard mt-3">
                   <div class="cardconditions d-flex justify-content-end">
-                    (Em até 12x de R$ 233,00
+                    (Up to 12x &#8369; 233,00
                   </div>
-                  <div class="">sem juros no cartão .On Shop )</div>
-                  <a class="btn btn-primary mt-3 mb-5 btndesktop" href="#" role="button">Continuar</a>
+                  <div class="">no interest on the card Online Tech )</div>
+                  <a class="btn btn-primary mt-3 mb-5 btndesktop" href="#" role="button">Continue</a>
                 </span>
               </div>
             </div>
@@ -388,7 +394,7 @@ include "config.php";
         <div class="col-md-8">
           <div class="product-details">
             <div class="d-flex flex-row">
-              <span class="ml-2 titlecheckout">Carrinho</span>
+              <span class="ml-2 titlecheckout">Add To Cart</span>
             </div>
             <br />
           </div>
@@ -400,115 +406,111 @@ include "config.php";
         <div class="col-md-12">
           <div class="d-flex justify-content-between mt-3 p-2">
             <div class="d-flex flex-row">
-              <img class="rounded" src="assets/IMG/IMG/Products/IMPRESSORA.jpg" width="80" height="80" />
+              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/IMG/Products/iPhone_13.webp" width="80" height="80" />
               <div class="ml-2 desc">
-                <span class="d-block">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS -
-                  Vermelho</span>
-                <span class="speccod pt-5">Código 234662100</span><br />
-                <span class="specenv">Vendido e entregue por
-                  <img src="assets/IMG/ON SHOP.jpg" width="70" alt="" /></span>
+                <span class="d-block">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS 
+                - Red</span>
+                <span class="speccod pt-5">Code 234662100</span><br />
+                <span class="specenv">Sold and delivered by
+                  <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
               </div>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 pb-3 info">
             <div class="flex-row">
-              <span>Quantidade</span>
+              <span>Quantity</span>
               <input id="form88" min="0" name="quantity" value="1" type="number" class="form-control" style="width: 50px" />
               <i class="bi bi-trash3"></i>
             </div>
 
             <div class="flex-row">
-              <span class="d-block price"> <s> de R$ 2.900,00 por </s></span>
-              <span class="d-block procedesc"> R$ 699,00 ou</span>
-              <span class="d-block pricev"> R$ 500,00 a vista</span>
+              <span class="d-block price"> <s> off &#8369; 2,900.00 by </s></span>
+              <span class="d-block pricev"> &#8369; 42,990.00 </span>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 p-2">
             <div class="d-flex flex-row">
-              <img class="rounded" src="assets/IMG/IMG/Products/GELADEIRA.jpg" width="80" height="80" />
+              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/IMG/Products/vivo v30.png" width="80" height="80" />
               <div class="ml-2 desc">
-                <span class="d-block">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS -
-                  Vermelho</span>
-                <span class="speccod pt-5">Código 234662100</span><br />
-                <span class="specenv">Vendido e entregue por
-                  <img src="assets/IMG/ON SHOP.jpg" width="70" alt="" /></span>
+                <span class="d-block">vivo V30 Lite unveiled with a 120Hz screen and 50MP selfie camera
+                - Black</span>
+                <span class="speccod pt-5">Code 234662100</span><br />
+                <span class="specenv">Sold and delivered by
+                  <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
               </div>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 pb-3 info">
             <div class="flex-row">
-              <span>Quantidade</span>
-              <input id="form888" min="0" name="quantity" value="2" type="number" class="form-control" style="width: 50px" />
+              <span>Quantity</span>
+              <input id="form888" min="0" name="quantity" value="1" type="number" class="form-control" style="width: 50px" />
               <i class="bi bi-trash3"></i>
             </div>
             <div class="flex-row">
-              <span class="d-block price"> <s> de R$ 2.900,00 por </s></span>
-              <span class="d-block ms- procedesc"> R$ 699,00 ou</span>
-              <span class="d-block pricev"> R$ 500,00 a vista</span>
+              <span class="d-block price"> <s> off &#8369; 2,900.00 by </s></span>
+              <span class="d-block pricev"> &#8369; 21,949.00</span>
               <i class="fa fa-trash-o ml-3"></i>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 p-2">
             <div class="d-flex flex-row">
-              <img class="rounded" src="assets/IMG/IMG/Products/PLACADEVIDEO2.jpg" width="80" height="80" />
+              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/b641d84456.webp" width="80" height="80" />
               <div class="ml-2 desc">
-                <span class="d-block">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS -
-                  Vermelho</span>
-                <span class="speccod pt-5">Código 234662100</span><br />
-                <span class="specenv">Vendido e entregue por
-                  <img src="assets/IMG/ON SHOP.jpg" width="70" alt="" /></span>
+                <span class="d-block">Uncharted Legacy of Thieves Collection Remastered 
+               - Game PS5</span>
+                <span class="speccod pt-5">Code 234662100</span><br />
+                <span class="specenv">Sold and delivered by
+                  <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
               </div>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 pb-3 info">
             <div class="flex-row">
-              <span>Quantidade</span>
-              <input id="form9" min="0" name="quantity" value="2" type="number" class="form-control" style="width: 50px" />
+              <span>Quantity</span>
+              <input id="form9" min="0" name="quantity" value="1" type="number" class="form-control" style="width: 50px" />
               <i class="bi bi-trash3"></i>
             </div>
 
             <div class="flex-row">
-              <span class="d-block price"> <s> de R$ 2.900,00 por </s></span>
-              <span class="d-block ms- procedesc"> R$ 699,00 ou</span>
-              <span class="d-block pricev"> R$ 500,00 a vista</span>
+              <span class="d-block price"> <s> off &#8369; 100 by</s></span>
+              <span class="d-block pricev"> &#8369; 484,00</span>
               <i class="fa fa-trash-o ml-3"></i>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 p-2">
             <div class="d-flex flex-row">
-              <img class="rounded" src="assets/IMG/IMG/Products/NIKE.jpg" width="80" height="80" />
+              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/monitor-gamer-aoc-led-24-full-hd-widescreen-hero-g2460pf-b3ded940.webp" width="80" height="80" />
               <div class="ml-2 desc">
-                <span class="d-block">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS -
-                  Vermelho</span>
-                <span class="speccod pt-5">Código 234662100</span><br />
-                <span class="specenv">Vendido e entregue por
-                  <img src="assets/IMG/ON SHOP.jpg" width="70" alt="" /></span>
+                <span class="d-block">Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5
+                 - Gaming Monitor</span>
+                <span class="speccod pt-5">Code 234662100</span><br />
+                <span class="specenv">Sold and delivered by
+                  <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
               </div>
             </div>
           </div>
 
           <div class="d-flex justify-content-between mt-3 pb-3 info">
             <div class="flex-row">
-              <span>Quantidade</span>
-              <input id="form10" min="0" name="quantity" value="2" type="number" class="form-control" style="width: 50px" />
+              <span>Quantity</span>
+              <input id="form10" min="0" name="quantity" value="1" type="number" class="form-control" style="width: 50px" />
               <i class="bi bi-trash3"></i>
             </div>
 
             <div class="flex-row">
-              <span class="d-block price"> <s> de R$ 2.900,00 por </s></span>
-              <span class="d-block ms- procedesc"> R$ 699,00 ou</span>
-              <span class="d-block pricev"> R$ 500,00 a vista</span>
+              <span class="d-block price"> <s> off &#8369; 100 by </s></span>
+              <span class="d-block pricev"> &#8369; 15.869,00</span>
               <i class="fa fa-trash-o ml-3"></i>
             </div>
           </div>
 
-          <div class="col-md-6 ps-3 zipcode">
+          <!-- <div class="col-md-6 ps-3 zipcode">
             <span class="envcheckout pb-3">Frete</span>
             <input class="zipcodeform" maxlength="9" name="CEP" placeholder="00000-00" style="
                   width: 150px;
@@ -519,7 +521,7 @@ include "config.php";
             <button type="button" class="btn btn-primary" id="zipcodebtn">
               OK
             </button>
-          </div>
+          </div> -->
 
           <div class="total">
             <div class="payment-total">

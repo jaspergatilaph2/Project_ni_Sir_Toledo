@@ -193,7 +193,24 @@ session_start();
             </div>
             <div class="text menu-dropdown" onclick="redirectBtnlogin()" href="login.php">
               <span class="msg" onclick="redirectBtnlogin()" href="login.php">Welcome to</span>
-              <a class="link" onclick="redirectBtnlogin()" href="login.php">Login or Register</a>
+              <a class="link" onclick="redirectBtnlogin()" href="login.php">
+                <?php
+
+                // Display login status
+                if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+                  // If the user is logged in, extract and display their first and second names
+                  $fullName = $_SESSION['fullName'];
+                  $names = explode(' ', $fullName); // Split full name into an array of names
+                  $firstName = $names[0]; // Extracting the first name
+                  $secondName = isset($names[1]) ? $names[1] : ''; // Extracting the second name if available
+                  echo "<span style='font-size: small;'>Welcome, " . htmlspecialchars($firstName) . " " . htmlspecialchars($secondName) . "</span>";
+                } else {
+                  // If the user is not logged in, display Login or Register
+                  echo "Login or Register";
+                }
+
+                ?>
+              </a>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
               <i class="fa-solid fa-xmark"></i>
@@ -484,7 +501,7 @@ session_start();
       </div>
       <div class="carousel-inner">
         <div class="carousel-item">
-          <img src="assets/IMG/AnyConv.com__1635417895_mobile-02.svg" class="d-block w-100" alt="..." />
+          <img src="../Online_Tech_Store_v1/assets/IMG/vivo.jpg" class="d-block w-100" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <h5></h5>
             <p>
@@ -493,7 +510,7 @@ session_start();
           </div>
         </div>
         <div class="carousel-item active">
-          <img src="assets/IMG/AnyConv.com__1635417895_mobile-01.svg" class="d-block w-100" alt="..." />
+          <img src="../Online_Tech_Store_v1/assets/IMG/Apple-iPhone.jpg" class="d-block w-100" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <h5></h5>
             <p>
@@ -591,7 +608,7 @@ session_start();
           <div class="flexslider">
             <ul class="slides">
               <li>
-                <img src="assets/IMG/1645553758_mini1.webp" alt="Mini banner 1">
+                <img src="../Online_Tech_Store_v1/assets/IMG/1645553758_mini1.webp" alt="Mini banner 1">
               </li>
             </ul>
           </div>
@@ -600,7 +617,7 @@ session_start();
           <div class="flexslider">
             <ul class="slides">
               <li>
-                <img src="assets/IMG/1645553838_mini3.webp" alt="Mini banner 1">
+                <img src="../Online_Tech_Store_v1/assets/IMG/1645553838_mini3.webp" alt="Mini banner 1">
               </li>
             </ul>
           </div>
@@ -609,7 +626,7 @@ session_start();
           <div class="flexslider">
             <ul class="slides">
               <li>
-                <img src="assets/IMG/1645553867_mini4.webp" alt="Mini banner 1">
+                <img src="../Online_Tech_Store_v1/assets/IMG/1645553867_mini4.webp" alt="Mini banner 1">
               </li>
             </ul>
           </div>
@@ -618,7 +635,7 @@ session_start();
           <div class="flexslider">
             <ul class="slides">
               <li>
-                <img src="assets/IMG/1645553818_mini2.webp" alt="Mini banner 1">
+                <img src="../Online_Tech_Store_v1/assets/IMG/1645553818_mini2.webp" alt="Mini banner 1">
               </li>
             </ul>
           </div>
@@ -633,16 +650,16 @@ session_start();
       <div class="splide__track">
         <ul class="splide__list">
           <li class="splide__slide">
-            <img src="assets/IMG/1645553838_mini3.webp" alt="">
+            <img src="../Online_Tech_Store_v1/assets/IMG/1645553838_mini3.webp" alt="">
           </li>
           <li class="splide__slide">
-            <img src="assets/IMG/1645553867_mini4.webp" alt="">
+            <img src="../Online_Tech_Store_v1/assets/IMG/1645553867_mini4.webp" alt="">
           </li>
           <li class="splide__slide">
-            <img src="assets/IMG/1645553818_mini2.webp" alt="">
+            <img src="../Online_Tech_Store_v1/assets/IMG/1645553818_mini2.webp" alt="">
           </li>
           <li class="splide__slide">
-            <img src="assets/IMG/1645553758_mini1.webp" alt="">
+            <img src="../Online_Tech_Store_v1/assets/IMG/1645553758_mini1.webp" alt="">
           </li>
         </ul>
       </div>
@@ -676,7 +693,7 @@ session_start();
                     <i class="bi bi-heart heartcard"></i>
                   </span>
                 </div>
-                <img src="assets/IMG/b641d84456.webp" alt="" class="img-fluid w-75" />
+                <img src="../Online_Tech_Store_v1/assets/IMG/b641d84456.webp" alt="" class="img-fluid w-75" />
                 <div class="card-badge">New</div>
               </div>
               <div class="card-body">
@@ -713,7 +730,7 @@ session_start();
                     <i class="bi bi-heart heartcard"></i>
                   </span>
                 </div>
-                <img src="assets/IMG/monitor-gamer-aoc-led-24-full-hd-widescreen-hero-g2460pf-b3ded940.webp" alt="" class="img-fluid w-75" />
+                <img src="../Online_Tech_Store_v1/assets/IMG/monitor-gamer-aoc-led-24-full-hd-widescreen-hero-g2460pf-b3ded940.webp" alt="" class="img-fluid w-75" />
                 <div class="card-badge">New</div>
               </div>
               <div class="card-body">
@@ -729,8 +746,8 @@ session_start();
                     <ion-icon name="star-half"></ion-icon> <span>(5)</span>
                   </div>
                   <div class="card-price" onclick="redirectProductpage()">
-                    <data value="">&#8369; 1.869,00</data>
-                    <data value="">&#8369; 1.792,42</data>
+                    <data value="">&#8369; 15.869,00</data>
+                    <data value="">&#8369; 15.792,42</data>
                   </div>
                   <div class="conditions-price" onclick="redirectProductpage()">
                     <p><a href="">in sight</a> <span>(10% discount)</span></p>
@@ -750,7 +767,7 @@ session_start();
                     <i class="bi bi-heart heartcard"></i>
                   </span>
                 </div>
-                <img src="assets/IMG/headset-gamer-razer-kraken-7-1-v2-chroma-oval-usb-06ab2be1.webp" alt="" class="img-fluid w-75" />
+                <img src="../Online_Tech_Store_v1/assets/IMG/headset-gamer-razer-kraken-7-1-v2-chroma-oval-usb-06ab2be1.webp" alt="" class="img-fluid w-75" />
               </div>
               <div class="card-body">
                 <div class="mb-3">
@@ -786,7 +803,7 @@ session_start();
                     <i class="bi bi-heart heartcard endheart"></i>
                   </span>
                 </div>
-                <img src="assets/IMG/jogo-mortal-kombat-11-ps4-6bba1909.webp" alt="" class="img-fluid w-75" />
+                <img src="../Online_Tech_Store_v1/assets/IMG/jogo-mortal-kombat-11-ps4-6bba1909.webp" alt="" class="img-fluid w-75" />
                 <div class="card-badge-full">
                   Full <ion-icon name="flash"></ion-icon>
                 </div>
@@ -825,7 +842,7 @@ session_start();
                     <i class="bi bi-heart heartcard"></i>
                   </span>
                 </div>
-                <img src="assets/IMG/console-playstation-4-slim-500gb-preto-bivolt-2aaceb63.webp" alt="" class="img-fluid w-75" />
+                <img src="../Online_Tech_Store_v1/assets/IMG/console-playstation-4-slim-500gb-preto-bivolt-2aaceb63.webp" alt="" class="img-fluid w-75" />
                 <div class="card-badge-full">
                   Full <ion-icon name="flash"></ion-icon>
                 </div>
@@ -864,7 +881,7 @@ session_start();
                     <i class="bi bi-heart heartcard"></i>
                   </span>
                 </div>
-                <img src="assets/IMG/3d6e734e22.webp" alt="Varsi Leather Bag" class="img-fluid w-75" />
+                <img src="../Online_Tech_Store_v1/assets/IMG/3d6e734e22.webp" alt="Varsi Leather Bag" class="img-fluid w-75" />
                 <div class="card-badge-red">50% off</div>
               </div>
               <div class="card-body">
@@ -938,7 +955,7 @@ session_start();
                     <i class="bi bi-heart heartcard endheart"></i>
                   </span>
                 </div>
-                <img src="assets/IMG/66f0195677.webp" alt="Varsi Leather Bag" class="img-fluid w-75" />
+                <img src="../Online_Tech_Store_v1/assets/IMG/66f0195677.webp" alt="Varsi Leather Bag" class="img-fluid w-75" />
                 <div class="card-badge-red">50% off</div>
               </div>
               <div class="card-body">
@@ -980,8 +997,6 @@ session_start();
               <li class="category-item-banner">
                 <div>
                   <img src="../Online_Tech_Store_v1/assets/IMG/banner-contador (1).webp" alt="" />
-                  <!-- assets/IMG/banner-contador (1).webp -->
-
                   <div class="counter">
                     <div class="days">
                       <div class="number" id="days"> 00 </div>
@@ -1675,11 +1690,11 @@ session_start();
               </ul>
             </div>
             <div class="col-lg-3 col-md-3 mb-4 mb-lg-0" id="form2">
-              <h5 class="text-uppercase mb-4">Receba Ofertas e Novidades de nossa loja</h5>
+              <h5 class="text-uppercase mb-4">Receive Offers and News from our store</h5>
               <div class="form-outline form-white mb-4">
                 <input type="email" class="form-control" placeholder="Email" />
               </div>
-              <button type="submit" class="btn btn-outline-light  btn-block">Quero Receber!</button>
+              <button type="submit" class="btn btn-outline-light  btn-block">I want to receive!</button>
             </div>
           </div>
         </div>
@@ -1699,18 +1714,18 @@ session_start();
                 <div class="col-md-4">
                   <span class="policy_terms">
                     <a href="#">Privacy policy</a><br />
-                    <a href="#">Terms e condition</a>
+                    <a href="#">Terms & condition</a>
                   </span>
                 </div>
                 <div class="col-md-4">
                   <div class="payment methods">
-                    <a href="#"><img src="assets/IMG/IMG/Icons/visa.svg" alt=""></a>
-                    <a href="#"><img src="assets/IMG/IMG/Icons/master.svg" alt=""></a>
-                    <a href="#"><img src="assets/IMG/IMG/Icons/hipercard.svg" alt=""></a>
-                    <a href="#"><img src="assets/IMG/IMG/Icons/boleto.svg" alt=""></a>
-                    <a href="#"><img src="assets/IMG/IMG/Icons/elo.svg" alt=""></a>
-                    <a href="#"><img src="assets/IMG/IMG/Icons/aura.svg" alt=""></a>
-                    <a href="#"><img src="assets/IMG/IMG/Icons/diners.svg" alt=""></a>
+                    <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/visa.svg" alt=""></a>
+                    <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/master.svg" alt=""></a>
+                    <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/hipercard.svg" alt=""></a>
+                    <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/boleto.svg" alt=""></a>
+                    <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/elo.svg" alt=""></a>
+                    <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/aura.svg" alt=""></a>
+                    <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/diners.svg" alt=""></a>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,3 @@
-<?php
-require "login_file.php";
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -355,6 +352,9 @@ require "login_file.php";
 
           <form class="loginclient" action="" method="post">
             <h5 class="title-box-login">I'm already a customer</h5>
+            <?php
+            require "login_file.php";
+            ?>
             <?php
             // Initialize $err variable
             $err = isset($err) ? $err : array();
