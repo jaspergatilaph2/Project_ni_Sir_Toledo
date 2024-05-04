@@ -525,16 +525,18 @@ include "config.php";
 
           <div class="total">
             <div class="payment-total">
-              <span class="title-total">Subtotal (4 itens)</span>
-              <img class="paymentcard" src="assets/IMG/IMG/Icons/elo.svg" alt="" />
-              <img class="paymentcard" src="assets/IMG/IMG/Icons/master.svg" alt="" />
+              <span class="title-total">Subtotal (4 items)</span>
+              <img class="paymentcard" src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/elo.svg" alt="" />
+              <!-- assets/IMG/IMG/Icons/elo.svg -->
+              <img class="paymentcard" src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/master.svg" alt="" />
+              <!-- assets/IMG/IMG/Icons/master.svg -->
               <div class="total-checkout">
-                <span class="total-checkout-value">R$ 2.796,00 ou</span>
-                <span class="total-checkout-desc">R$ 1.796,00 a vista</span>
+                <span class="total-checkout-value">&#8369; 2.796,00</span>
+                <span class="total-checkout-desc">&#8369; 1.796,00</span>
                 <span class="condipricetotal">
-                  <div>(Em até 12x de R$ 233,00</div>
-                  <div>sem juros no cartão .On Shop )</div>
-                  <a class="btn btn-primary mb-0 mt-0 btncheckoutpayment" href="#" role="button">Continuar</a>
+                  <div>(In until 12x of &#8369; 233,00</div>
+                  <div>no interest on the card Online Tech )</div>
+                  <a class="btn btn-primary mb-0 mt-0 btncheckoutpayment" href="#" role="button">Continue</a>
                 </span>
               </div>
             </div>
@@ -550,70 +552,61 @@ include "config.php";
           <div class="container p-4">
             <div class="row">
               <div class="col-lg-3 col-md-3 mb-4 mb-lg-0">
-                <h5 class="text-uppercase mb-4">Institucional</h5>
+                <h5 class="text-uppercase mb-4">Institutional</h5>
                 <ul class="list-unstyled mb-4">
                   <li>
-                    <a href="#!">Fale Conosco</a>
+                    <a href="#!">Contact us</a>
                   </li>
                   <li>
-                    <a href="#!">Formas de Envio</a>
+                    <a href="#!">Shipping Methods</a>
                   </li>
                   <li>
-                    <a href="#!">Política de Troca</a>
+                    <a href="#!">Exchange Policy</a>
                   </li>
                   <li>
-                    <a href="#!">Segurança e Privacidade</a>
+                    <a href="#!">Security and Privacy</a>
                   </li>
                 </ul>
               </div>
               <div class="col-lg-3 col-md-3 mb-6 mb-lg-0">
-                <h5 class="text-uppercase mb-4">Categorias</h5>
+                <h5 class="text-uppercase mb-4">Categories</h5>
                 <ul class="list-unstyled">
                   <li>
-                    <a href="#!">Eletrônicos</a>
+                    <a href="#!">Electronics</a>
                   </li>
                   <li>
-                    <a href="#!">Lançamentos</a>
-                  </li>
-                  <li>
-                    <a href="#!">Casa e Decor</a>
-                  </li>
-                  <li>
-                    <a href="#!">Outlet</a>
-                  </li>
-                  <li>
-                    <a href="#!">Mochilas</a>
+                    <a href="#!">Releases</a>
                   </li>
                 </ul>
               </div>
               <div class="col-lg-3 col-md-3 mb-4 mb-lg-0">
-                <h5 class="text-uppercase mb-4">Selos</h5>
+                <h5 class="text-uppercase mb-4">Partnership</h5>
                 <ul class="list-unstyled">
                   <div class="media-icons" id="selos">
                     <div>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/site seguro 2.png" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/site seguro 2.png" alt="" /></a>
                     </div>
                     <div>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/selo-google-res.png" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/selo-google-res.png" alt="" /></a>
                     </div>
                     <div>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/site prote.png" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/site prote.png" alt="" /></a>
                     </div>
                     <div>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/siteseguro3.png" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/siteseguro3.png" alt="" /></a>
                     </div>
                   </div>
                 </ul>
               </div>
               <div class="col-lg-3 col-md-3 mb-4 mb-lg-0" id="form99">
                 <h5 class="text-uppercase mb-4">
-                  Receba Ofertas e Novidades de nossa loja
+                Receive Offers and News from our store
                 </h5>
                 <div class="form-outline form-white mb-4">
                   <input type="email" class="form-control" placeholder="Email" />
                 </div>
                 <button type="submit" class="btn btn-outline-light btn-block">
-                  Quero Receber!
+                I want to receive!
                 </button>
               </div>
             </div>
@@ -634,18 +627,18 @@ include "config.php";
                   <div class="col-md-4">
                     <span class="policy_terms">
                       <a href="#">Privacy policy</a><br />
-                      <a href="#">Terms e condition</a>
+                      <a href="#">Terms & condition</a>
                     </span>
                   </div>
                   <div class="col-md-4">
                     <div class="payment methods">
-                      <a href="#"><img src="assets/IMG/IMG/Icons/visa.svg" alt="" /></a>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/master.svg" alt="" /></a>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/hipercard.svg" alt="" /></a>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/boleto.svg" alt="" /></a>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/elo.svg" alt="" /></a>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/aura.svg" alt="" /></a>
-                      <a href="#"><img src="assets/IMG/IMG/Icons/diners.svg" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/visa.svg" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/master.svg" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/hipercard.svg" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/boleto.svg" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/elo.svg" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/aura.svg" alt="" /></a>
+                      <a href="#"><img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/diners.svg" alt="" /></a>
                     </div>
                   </div>
                 </div>
