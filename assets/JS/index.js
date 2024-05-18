@@ -254,3 +254,34 @@ const xmobile = setInterval(function () {
 }, 1000);
 
 console.log(countDownDate);
+
+// function addToCart(productName, price) {
+//   // You can use AJAX to send the product information to a PHP file that handles adding it to the cart
+//   // For demonstration purposes, let's assume you have a PHP file named addToCart.php
+  
+//   // Create an XMLHttpRequest object
+//   var xhr = new XMLHttpRequest();
+  
+//   // Prepare the POST request
+//   xhr.open("POST", "cart.php", true);
+  
+//   // Set the request header
+//   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  
+//   // Define what happens on successful data submission
+//   xhr.onload = function() {
+//     // Handle response from addToCart.php if needed
+//     console.log(xhr.responseText);
+//   };
+  
+//   // Define what happens in case of error
+//   xhr.onerror = function() {
+//     console.error('Error occurred while sending the request.');
+//   };
+  
+
+//   var data = "productName=" + encodeURIComponent(productName) + "&price=" + price;
+  
+//   // Send the request
+//   xhr.send(data);
+// }

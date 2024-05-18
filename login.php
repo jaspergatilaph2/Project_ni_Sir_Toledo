@@ -36,6 +36,13 @@
 </head>
 
 <body>
+  <?php
+  if (!empty($err)) {
+    foreach ($err as $error) {
+      echo "<p>$error</p>";
+    }
+  }
+  ?>
   <div class="spinner-wrapper">
     <div class="spinner-border" role="status">
       <span class="visually-hidden">Loading...</span>

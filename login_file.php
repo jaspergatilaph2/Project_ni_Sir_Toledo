@@ -1,6 +1,5 @@
 <?php
 include "config.php";
-session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -18,11 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $hashed_password)) {
             // Password matches, login successful
             // Set session variables
+            session_start();
             $_SESSION['loggedIn'] = true;
             $_SESSION['fullName'] = $row['fullname'];
             
             // Redirect the user to another page
-            header("location: index.php");
+            header("Location: index.php");
             exit();
         } else {
             // Password does not match
@@ -33,3 +33,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $err[] = "Message: User not found!!!!";
     }
 }
+?>

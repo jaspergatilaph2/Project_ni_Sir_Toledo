@@ -1,5 +1,6 @@
 <?php
 include "config.php";
+
 session_start();
 ?>
 <!DOCTYPE html>
@@ -698,9 +699,7 @@ session_start();
               </div>
               <div class="card-body">
                 <div class="mb-3">
-                  <a class="card-title">
-                    <a class="title-text" target="_blank" onclick="redirectProductpage()" href="#">Uncharted Legacy of Thieves Collection Remastered Game PS5</a>
-                  </a>
+                  <a class="card-title title-text" target="_blank" onclick="redirectProductpage()" href="#">Uncharted Legacy of Thieves Collection Remastered Game PS5</a>
                   <div class="star">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -709,15 +708,20 @@ session_start();
                     <ion-icon name="star-half"></ion-icon> <span>(5)</span>
                   </div>
                   <div class="card-price" onclick="redirectProductpage()">
-                    <data value="">&#8369; 484,00</data>
-                    <data value="">&#8369; 324,90</data>
+                    <data value="484">&#8369; 484.00</data>
+                    <data value="324.90">&#8369; 324.90</data>
                   </div>
                   <div class="conditions-price" onclick="redirectProductpage()">
                     <p><a href="">in sight</a> <span>(10% discount)</span></p>
                   </div>
                   <div class="conditions-payment" onclick="redirectProductpage()">
-                    <span> or 8x of &#8369; 46,15 interest-free </span>
+                    <span> or 8x of &#8369; 46.15 interest-free </span>
                   </div>
+                  <in method="post" action="cart_file.php">
+                    <input type="hidden" name="product_id" value="1">
+                    <input type="hidden" name="price" value="&#8369; 324.90">
+                    <button type="submit">Add to cart</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -736,7 +740,7 @@ session_start();
               <div class="card-body">
                 <div class="mb-3">
                   <a class="card-title">
-                    <a class="title-text" target="_blank" onclick="redirectProductpage()" href="#">Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5</a>
+                    <a class="title-text" target="_blank" onclick="addToCart('Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5', 15869.00)" href="#">Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5</a>
                   </a>
                   <div class="star">
                     <ion-icon name="star"></ion-icon>
@@ -745,19 +749,21 @@ session_start();
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star-half"></ion-icon> <span>(5)</span>
                   </div>
-                  <div class="card-price" onclick="redirectProductpage()">
+                  <div class="card-price">
                     <data value="">&#8369; 15.869,00</data>
                     <data value="">&#8369; 15.792,42</data>
                   </div>
-                  <div class="conditions-price" onclick="redirectProductpage()">
+                  <div class="conditions-price">
                     <p><a href="">in sight</a> <span>(10% discount)</span></p>
                   </div>
-                  <div class="conditions-payment" onclick="redirectProductpage()">
+                  <div class="conditions-payment">
                     <span> or 8x of &#8369; 179,24 interest-free </span>
                   </div>
+                  <!-- <button type="button" onclick="addToCart('Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5', 15869.00)">Add to Cart</button> -->
                 </div>
               </div>
             </div>
+
           </li>
           <li class="col-3">
             <div class="product-card">
@@ -1033,7 +1039,6 @@ session_start();
         <div class="row-fluid">
           <div class="picturebannermobile">
             <img src="../Online_Tech_Store_v1/assets/IMG/banner-contador-mob.png" alt="" width="" />
-            <!-- assets/IMG/banner-contador-mob.png -->
           </div>
         </div>
       </div>
@@ -1089,7 +1094,6 @@ session_start();
                   </span>
                 </div>
                 <img src="../Online_Tech_Store_v1/assets/IMG/iphone-xs-max-space-select-2018.jfif" alt="" class="img-fluid w-75" />
-                <!-- assets/IMG/iphone-xs-max-space-select-2018.jfif -->
                 <div class="card-badge">New</div>
               </div>
               <div class="card-body">
@@ -1127,7 +1131,6 @@ session_start();
                   </span>
                 </div>
                 <img src="../Online_Tech_Store_v1/assets/IMG/cf31dba1ff.webp" alt="" class="img-fluid w-75" />
-                <!-- assets/IMG/cf31dba1ff.webp -->
                 <div class="card-badge">New</div>
               </div>
               <div class="card-body">
@@ -1165,7 +1168,6 @@ session_start();
                   </span>
                 </div>
                 <img src="../Online_Tech_Store_v1/assets/IMG/2xiaomi_redmi_note_10_5g_128gb_graphite_gray-e1623347692143-250x300.jpg" alt="" class="img-fluid w-75" />
-                <!-- assets/IMG/2xiaomi_redmi_note_10_5g_128gb_graphite_gray-e1623347692143-250x300.jpg -->
               </div>
               <div class="card-body">
                 <div class="mb-3">
@@ -1202,7 +1204,6 @@ session_start();
                   </span>
                 </div>
                 <img src="../Online_Tech_Store_v1/assets/IMG/foto5-1-e1650206247663-250x300.jpg" alt="" class="img-fluid w-75" />
-                <!-- assets/IMG/foto5-1-e1650206247663-250x300.jpg -->
                 <div class="card-badge-red">50% off</div>
               </div>
               <div class="card-body">
@@ -1240,7 +1241,6 @@ session_start();
                   </span>
                 </div>
                 <img src="../Online_Tech_Store_v1/assets/IMG/3d6e734e22.webp" alt="" class="img-fluid w-75" />
-                <!-- assets/IMG/3d6e734e22.webp -->
                 <div class="card-badge-red">50% off</div>
               </div>
               <div class="card-body">
@@ -1603,44 +1603,34 @@ session_start();
         <li class="splide__slide" id="imgcarouseltag">
           <div>
             <img src="../Online_Tech_Store_v1/assets/IMG/SAMSUNG-150x150.jpg" alt="Mini banner 6">
-            <!-- assets/IMG/SAMSUNG-150x150.jpg -->
           </div>
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/GIGABYTE-150x150.jpg" alt="Mini banner 5">
-          <!-- assets/IMG/GIGABYTE-150x150.jpg -->
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/COOLER-MASTER-150x150.jpg" alt="Mini banner 5">
-          <!-- assets/IMG/COOLER-MASTER-150x150.jpg -->
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/ASUS-150x150.jpg" alt="Mini banner 5">
-          <!-- assets/IMG/ASUS-150x150.jpg -->
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/RAZER-150x150.jpg" alt="Mini banner 5">
-          <!-- assets/IMG/RAZER-150x150.jpg -->
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/THERMALTAKE-150x150.jpg" alt="Mini banner 5">
-          <!-- assets/IMG/THERMALTAKE-150x150.jpg -->
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/TP-LINK-150x150.jpg" alt="Mini banner 4">
-          <!-- assets/IMG/TP-LINK-150x150.jpg -->
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/TARGUS-150x150.jpg" alt="Mini banner 4">
-          <!-- assets/IMG/TARGUS-150x150.jpg -->
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/NVDIA-150x150.jpg" alt="Mini banner 4">
-          <!-- assets/IMG/NVDIA-150x150.jpg -->
         </li>
         <li class="splide__slide">
           <img src="../Online_Tech_Store_v1/assets/IMG/LOGITECH-150x150.jpg" alt="Mini banner 4">
-          <!-- assets/IMG/LOGITECH-150x150.jpg -->
         </li>
       </ul>
     </div>
