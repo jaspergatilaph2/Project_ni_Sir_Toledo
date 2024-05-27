@@ -1,6 +1,5 @@
 <?php
 include "config.php";
-
 session_start();
 ?>
 <!DOCTYPE html>
@@ -699,7 +698,7 @@ session_start();
               </div>
               <div class="card-body">
                 <div class="mb-3">
-                  <a class="card-title title-text" target="_blank" onclick="redirectProductpage()" href="#">Uncharted Legacy of Thieves Collection Remastered Game PS5</a>
+                  <a class="card-title title-text" target="_blank" href="card.php">Uncharted Legacy of Thieves Collection Remastered Game PS5</a>
                   <div class="star">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -717,13 +716,11 @@ session_start();
                   <div class="conditions-payment" onclick="redirectProductpage()">
                     <span> or 8x of &#8369; 46.15 interest-free </span>
                   </div>
-                  <in method="post" action="cart_file.php">
-                    <input type="hidden" name="product_id" value="1">
-                    <input type="hidden" name="price" value="&#8369; 324.90">
-                    <button type="submit">Add to cart</button>
-                  </form>
                 </div>
               </div>
+
+
+
             </div>
           </li>
           <li class="col-3">
@@ -1749,7 +1746,7 @@ session_start();
 
   <!-- CUSTOM JS LINK-->
   <script src="../Online_Tech_Store_v1/assets/JS/index.js"></script>
-  <!-- assets/JS/index.js -->
+  <script src="../Online_Tech_Store_v1/assets/JS/cart_ajax.js"></script>
 
   <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

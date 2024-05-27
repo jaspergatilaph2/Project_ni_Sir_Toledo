@@ -151,7 +151,7 @@ const actionproductcard = document.querySelector(
   "title-text"
 );
 function redirectProductpage() {
-  window.location.href = "produto.html";
+  window.location.href = "card.php";
 }
 
 const actionCheckout = document.querySelector(".iconscart");
