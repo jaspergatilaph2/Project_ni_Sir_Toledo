@@ -1,5 +1,9 @@
 <?php
 include "config.php";
+session_start();
+
+$sql = "SELECT `id`, `product_id`, `price`, `picture`, `quantity` FROM `cart`";
+$result = mysqli_query($connection, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,9 +19,9 @@ include "config.php";
   <!-- FAVICON -->
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap CSS -->
-
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- splidejs CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.5.0/dist/css/splide.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.5.0/dist/css/themes/splide-skyblue.min.css" />
@@ -36,6 +40,30 @@ include "config.php";
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Fonte Google -->
+
+  <!-- custome css -->
+  <style>
+    /* Custom CSS */
+    .cart {
+      padding: 20px;
+    }
+
+    .summary {
+      padding: 20px;
+    }
+
+    .title {
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      margin-bottom: 20px;
+    }
+
+    .close {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -83,7 +111,24 @@ include "config.php";
             <span class="shop-bag">
               <ion-icon name="person-circle-outline"></ion-icon>
             </span>
-            <div class="text-icon">Login or Register</div>
+            <div class="text-icon">
+              <?php
+
+              // Display login status
+              if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+                // If the user is logged in, extract and display their first and second names
+                $fullName = $_SESSION['fullName'];
+                $names = explode(' ', $fullName); // Split full name into an array of names
+                $firstName = $names[0]; // Extracting the first name
+                $secondName = isset($names[1]) ? $names[1] : ''; // Extracting the second name if available
+                echo "<span style='font-size: small;'>Welcome, " . htmlspecialchars($firstName) . " " . htmlspecialchars($secondName) . "</span>";
+              } else {
+                // If the user is not logged in, display Login or Register
+                echo "Login or Register";
+              }
+
+              ?>
+            </div>
           </div>
           <div class="col-md-3" id="iconscart">
             <span class="shop-bag" id="cart">
@@ -107,7 +152,24 @@ include "config.php";
             </div>
             <div class="text menu-dropdown" onclick="redirectBtnlogin()" href="#">
               <span class="msg" onclick="redirectBtnlogin()" href="#">Welcome to</span>
-              <a class="link" onclick="redirectBtnlogin()" href="#">Login or Register</a>
+              <a class="link" onclick="redirectBtnlogin()" href="login.php">
+                <?php
+
+                // Display login status
+                if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+                  // If the user is logged in, extract and display their first and second names
+                  $fullName = $_SESSION['fullName'];
+                  $names = explode(' ', $fullName); // Split full name into an array of names
+                  $firstName = $names[0]; // Extracting the first name
+                  $secondName = isset($names[1]) ? $names[1] : ''; // Extracting the second name if available
+                  echo "<span style='font-size: small;'>Welcome, " . htmlspecialchars($firstName) . " " . htmlspecialchars($secondName) . "</span>";
+                } else {
+                  // If the user is not logged in, display Login or Register
+                  echo "Login or Register";
+                }
+
+                ?>
+              </a>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
               <i class="fa-solid fa-xmark"></i>
@@ -221,167 +283,88 @@ include "config.php";
 
   <main>
     <!-- Chaeckout Desktop -->
-    <div class="container mt-5 cart desktop">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="align-items-start">
-            <span class="Titledesktopsac">Add To Cart</span>
-          </div>
 
-          <div class="product-details continer mt-5">
+
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-10">
+          <div class="card">
             <div class="row">
-              <div class="d-flex align-itens-center">
-                <div class="qtdstart col-8">
-                  <span></span>
-                </div>
-                <div class="qtdstart col-2">
-                  <span>Quantity</span>
-                </div>
-                <div class="pricestart col-1">
-                  <span class="mr-1">Price</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-between mt-3 pe-5 infoproduto">
-            <div class="d-flex flex-row">
-              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/IMG/Products/iPhone_13.webp" width="80" height="80" />
-              <div class="ml-2 ps-3">
-                <span class="d-block titledesktop">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS
-                  <br />
-                  - Red</span>
-                <div class="mt-2">
-                  <span class="coddesktop">Code 234662100</span><br />
-                </div>
-                <div class="mt-1 mb-2">
-                  <span class="entrega mt-4">Sold and delivered by
-                    <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
-                </div>
-              </div>
-            </div>
-            <input id="form7" min="0" name="quantity" value="2" type="number" class="form-control mb-5" style="width: 50px; height: 35px" />
-            <div class="d-flex flex-row mb-5">
-              <span class="ml-5">&#8369; 42,990.00</span>
-              <i class="fa fa-trash-o ml-3 text-black-50"></i>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-between mt-3 pe-5 infoproduto">
-            <div class="d-flex flex-row">
-              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/IMG/Products/vivo v30.png" width="80" height="80" />
-              <!-- assets/IMG/IMG/Products/PLACADEVIDEO2.jpg -->
-              <div class="ml-2 ps-3">
-                <span class="d-block titledesktop">vivo V30 Lite unveiled with a 120Hz screen and 50MP selfie camera
-                  <br />
-                  - Black</span>
-                <div class="mt-2">
-                  <span class="coddesktop">Code 234662100</span><br />
-                </div>
-                <div class="mt-1 mb-2">
-                  <span class="entrega mt-4">Sold and delivered by
-                    <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
-                </div>
-              </div>
-            </div>
-            <input id="form5" min="0" name="quantity" value="2" type="number" class="form-control mb-5" style="width: 50px; height: 35px" />
-            <div class="d-flex flex-row mb-5">
-              <span class="ml-5">&#8369; 21,949.00</span>
-              <i class="fa fa-trash-o ml-3 text-black-50"></i>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-between mt-3 pe-5 infoproduto">
-            <div class="d-flex flex-row">
-              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/b641d84456.webp" width="80" height="80" />
-              <div class="ml-2 ps-3">
-                <span class="d-block titledesktop">Uncharted Legacy of Thieves Collection Remastered Game PS5
-                  <br />
-                  - PS5 Game</span>
-                <div class="mt-2">
-                  <span class="coddesktop">Code 234662100</span><br />
-                </div>
-                <div class="mt-1 mb-2">
-                  <span class="entrega mt-4">Sold and delivered by
-                    <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
-                </div>
-              </div>
-            </div>
-            <input id="form6" min="0" name="quantity" value="2" type="number" class="form-control mb-5" style="width: 50px; height: 35px" />
-            <div class="d-flex flex-row mb-5">
-              <span class="ml-5">&#8369; 484,00</span>
-              <i class="fa fa-trash-o ml-3 text-black-50"></i>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-between mt-3 pe-5 infoproduto">
-            <div class="d-flex flex-row">
-              <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/monitor-gamer-aoc-led-24-full-hd-widescreen-hero-g2460pf-b3ded940.webp" width="80" height="80" />
-              <div class="ml-2 ps-3">
-                <span class="d-block titledesktop">Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5
-                  <br />- Monitor</span>
-                <div class="mt-2">
-                  <span class="coddesktop">Code 234662100</span><br />
-                </div>
-                <div class="mt-1 mb-2">
-                  <span class="entrega mt-4">Sold and delivered by
-                    <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
-                </div>
-              </div>
-            </div>
-            <input id="form8" min="0" name="quantity" value="2" type="number" class="form-control mb-5" style="width: 50px; height: 35px" />
-            <div class="d-flex flex-row mb-5">
-              <span class="ml-5">&#8369; 15.792,42</span>
-              <i class="fa fa-trash-o ml-3 text-black-50"></i>
-            </div>
-          </div>
-
-          <!-- <div class="container mt-2 p-3 desktop">
-            <div class="row">
-              <div class="d-flex align-items-center mb-2">
-                <span class="pe-2">Shipping</span>
-                <input class="" maxlength="9" name="CEP" placeholder="00000-00" style="
-                      width: 140px;
-                      height: 40px;
-                      justify-content: center;
-                      align-items: center;
-                    " />
-                <button type="button" class="btn btn-primary okdesk">
-                  OK
-                </button>
-              </div>
-            </div>
-          </div> -->
-
-          <div class="d-flex align-items-center justify-content-end pe-3 destoptotal">
-            <div class="row">
-              <div class="d-flex justify-content-end">
-                <span class="col-4 mt-3">
-                  <span>Subtotal (4 itens)</span>
-                </span>
-
-                <span class="col-4 mt-3">
-                  <div class="total">
-                    <span class="d-flex justify-content-end">&#8369; 2.796,00</span>
-                    <span class="d-flex justify-content-end">&#8369; 1.796,00 at sight</span>
+              <div class="col-md-6 cart">
+                <div class="title">
+                  <div class="row">
+                    <div class="col">
+                      <h4><b>Shopping Cart</b></h4>
+                    </div>
+                    <div class="col align-self-center text-right text-muted">
+                      <span id="cart-item-count"></span> items
+                    </div>
                   </div>
-                </span>
+                </div>
+                <?php
+                if ($result && mysqli_num_rows($result) > 0) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $total = $row['product_id'] * $row['price'];
+                ?>
+                    <div class="row cart-item border-top border-bottom">
+                      <div class="row main align-items-center">
+                        <div class="col-2">
+                          <img class="img-fluid rounded" src="<?php echo $row['picture']; ?>" style="max-width: 100px; max-height: 100px;">
+                        </div>
+
+                        <div class="col">
+                          <div class="row text-muted"></div>
+                          <div class="row"></div>
+                        </div>
+                        <div class="col"> <a href="#" class="border"><?php echo $row['quantity']; ?></a></div>
+                        <div class="col">&#8369; <?php echo number_format($row['price'], 2, ',', '.'); ?><span class="close">&#10005;</span></div>
+                      </div>
+                    </div>
+                <?php
+                  }
+                } else {
+                  echo "<div class='row border-top border-bottom'><div class='row main align-items-center'><div class='col text-center'><p>Your cart is empty.</p></div></div></div>";
+                }
+                ?>
+              </div>
+              <div class="col-md-6 summary">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"><b>Summary</b></h5>
+                    <hr>
+                    <div class="row">
+                      <div class="col-6">ITEMS <span id="cart-summary-count"></span></div>
+                      <!-- <div class="col-6 text-right">R$ <span id="cart-total-price"></span></div> -->
+                    </div>
+                    <form>
+                      <div class="form-group">
+                        <label for="shipping">SHIPPING</label>
+                        <select id="shipping" class="form-control">
+                          <option class="text-muted">Standard-Delivery- &#8369; 20.00</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="shipping">SHIPPING DELIVERY</label>
+                        <select id="shipping" class="form-control">
+                          <option class="text-muted">CASH ON DELIVERY</option>
+                          <option class="text-muted">GCASH</option>
+                          <option class="text-muted">HOME CREDIT</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="code">VOUCHER</label>
+                        <input id="code" class="form-control" placeholder="Enter your code">
+                      </div>
+                    </form>
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                      <div class="col">TOTAL PRICE</div>
+                      <div class="col text-right">Total: &#8369; <span id="cart-total-price-summary"><?php echo number_format($total, 2, ',', '.'); ?></span></div>
+                    </div>
+                    <button class="btn btn-primary btn-block">CHECKOUT</button>
+                  </div>
+                </div>
               </div>
 
-              <div class="d-flex justify-content-end">
-                <span class="mt-3 col-3">
-                  <img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/elo.svg" alt="" />
-                  <img src="../Online_Tech_Store_v1/assets/IMG/IMG/Icons/master.svg" alt="" />
-                  <!-- assets/IMG/IMG/Icons/master.svg -->
-                </span>
-                <span class="totaldesktopaymentcard mt-3">
-                  <div class="cardconditions d-flex justify-content-end">
-                    (Up to 12x &#8369; 233,00
-                  </div>
-                  <div class="">no interest on the card Online Tech )</div>
-                  <a class="btn btn-primary mt-3 mb-5 btndesktop" href="#" role="button">Continue</a>
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -408,8 +391,8 @@ include "config.php";
             <div class="d-flex flex-row">
               <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/IMG/Products/iPhone_13.webp" width="80" height="80" />
               <div class="ml-2 desc">
-                <span class="d-block">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS 
-                - Red</span>
+                <span class="d-block">Apple iPhone 13 128GB (PRODUCT) RED Tela 6,1” 12MP - iOS
+                  - Red</span>
                 <span class="speccod pt-5">Code 234662100</span><br />
                 <span class="specenv">Sold and delivered by
                   <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
@@ -435,7 +418,7 @@ include "config.php";
               <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/IMG/Products/vivo v30.png" width="80" height="80" />
               <div class="ml-2 desc">
                 <span class="d-block">vivo V30 Lite unveiled with a 120Hz screen and 50MP selfie camera
-                - Black</span>
+                  - Black</span>
                 <span class="speccod pt-5">Code 234662100</span><br />
                 <span class="specenv">Sold and delivered by
                   <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
@@ -460,8 +443,8 @@ include "config.php";
             <div class="d-flex flex-row">
               <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/b641d84456.webp" width="80" height="80" />
               <div class="ml-2 desc">
-                <span class="d-block">Uncharted Legacy of Thieves Collection Remastered 
-               - Game PS5</span>
+                <span class="d-block">Uncharted Legacy of Thieves Collection Remastered
+                  - Game PS5</span>
                 <span class="speccod pt-5">Code 234662100</span><br />
                 <span class="specenv">Sold and delivered by
                   <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
@@ -488,7 +471,7 @@ include "config.php";
               <img class="rounded" src="../Online_Tech_Store_v1/assets/IMG/monitor-gamer-aoc-led-24-full-hd-widescreen-hero-g2460pf-b3ded940.webp" width="80" height="80" />
               <div class="ml-2 desc">
                 <span class="d-block">Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5
-                 - Gaming Monitor</span>
+                  - Gaming Monitor</span>
                 <span class="speccod pt-5">Code 234662100</span><br />
                 <span class="specenv">Sold and delivered by
                   <img src="../Online_Tech_Store_v1/assets/IMG/ONLINE_SHOP.png" width="80" alt="" /></span>
@@ -600,13 +583,13 @@ include "config.php";
               </div>
               <div class="col-lg-3 col-md-3 mb-4 mb-lg-0" id="form99">
                 <h5 class="text-uppercase mb-4">
-                Receive Offers and News from our store
+                  Receive Offers and News from our store
                 </h5>
                 <div class="form-outline form-white mb-4">
                   <input type="email" class="form-control" placeholder="Email" />
                 </div>
                 <button type="submit" class="btn btn-outline-light btn-block">
-                I want to receive!
+                  I want to receive!
                 </button>
               </div>
             </div>
@@ -672,6 +655,11 @@ include "config.php";
   <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- custome bs -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

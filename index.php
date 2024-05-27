@@ -172,7 +172,23 @@ session_start();
             <span class="shop-bag" id="cart">
               <ion-icon name="cart-outline"></ion-icon>
               <div class="notification">
-                <span class="notification-number"></span>
+                <span class="notification-number">
+                  <?php
+                   $sql = "SELECT COUNT(product_id) AS `TOTAL_ITEMS` FROM cart";
+                   $result = mysqli_query($connection, $sql);
+                   
+                   // Check if the query executed successfully
+                   if ($result) {
+                       // Fetch the result as an associative array
+                       $row = mysqli_fetch_assoc($result);
+                       // Display the total items
+                       echo $row['TOTAL_ITEMS'];
+                   } else {
+                       // Display an error message if the query fails
+                       echo "Error executing query: " . mysqli_error($connection);
+                   }
+                  ?>
+                </span>
               </div>
             </span>
           </div>
@@ -737,7 +753,7 @@ session_start();
               <div class="card-body">
                 <div class="mb-3">
                   <a class="card-title">
-                    <a class="title-text" target="_blank" onclick="addToCart('Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5', 15869.00)" href="#">Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5</a>
+                    <a class="title-text" target="_blank" href="card1.php">Monitor Gamer AOC SPEED 24 75Hz IPS 1ms 24G2HE5</a>
                   </a>
                   <div class="star">
                     <ion-icon name="star"></ion-icon>
@@ -775,7 +791,7 @@ session_start();
               <div class="card-body">
                 <div class="mb-3">
                   <a class="card-title">
-                    <a class="title-text" target="_blank" onclick="redirectProductpage()" href="#">Headset Razer Kraken X Lite Surrounbr <br> d7.1 Drivers 40mm</a>
+                    <a class="title-text" target="_blank" href="card2.php">Headset Razer Kraken X Lite Surrounbr <br> d7.1 Drivers 40mm</a>
                   </a>
                   <div class="star">
                     <ion-icon name="star"></ion-icon>

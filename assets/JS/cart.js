@@ -70,6 +70,6 @@ const actionbtn = document.querySelector(
   ".account-login"
 );
 function redirectBtnlogin() {
-  window.location.href = "login.php";
+  window.location.href = "login_file.php";
 }
 

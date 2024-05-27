@@ -26,7 +26,7 @@ include "config.php";
 
     .card {
       width: 350px;
-      height: 415px;
+      height: 520px;
     }
 
     .image {
@@ -84,7 +84,7 @@ include "config.php";
     }
 
     h4 {
-      font-size: 20px;
+      font-size: 15px;
       text-transform: uppercase;
     }
   </style>
@@ -96,12 +96,13 @@ include "config.php";
     <div class="card p-3">
       <div class="d-flex justify-content-between align-items-center">
         <div class="mt-2">
-          <h4 class="text-uppercase">Uncharted</h4>
-          <h4 class="text-uppercase">Legacy </h4>
-          <h4 class="text-uppercase">of Thieves</h4>
+          <h4 class="text-uppercase">Headset Razer </h4>
+          <h4 class="text-uppercase">Kraken </h4>
+          <h4 class="text-uppercase">X Lite </h4>
+          <h4 class="text-uppercase">Surrounbr</h4>
           <div class="mt-5">
-            <h5 class="text-uppercase mb-0">Playstation</h5>
-            <h1 class="main-heading mt-0">Games</h1>
+            <h5 class="text-uppercase mb-0">Gaming</h5>
+            <h1 class="main-heading mt-0">Headset</h1>
             <div class="d-flex flex-row user-ratings">
               <div class="ratings">
                 <i class="fa-solid fa-star"></i>
@@ -114,20 +115,20 @@ include "config.php";
           </div>
         </div>
         <div class="image">
-          <img src="../Online_Tech_Store_v1/assets/IMG/b641d84456.webp" width="195">
+          <img src="../Online_Tech_Store_v1/assets/IMG/headset-gamer-razer-kraken-7-1-v2-chroma-oval-usb-06ab2be1.webp" width="195">
         </div>
       </div>
       <div class="card-price">
-        <data value="324.90">&#8369; 324.90</data>
+        <data value="">&#8369; 399,10</data>
       </div>
-      <p>A greater game that with great story buy now. </p>
+      <p> should offer excellent sound quality, a comfortable fit for long gaming sessions, a reliable microphone for clear communication, and durability to withstand daily use. </p>
       <form method="post" action="" id="add-to-cart-form">
         <?php
         require_once "cart_file.php";
         ?>
-        <input type="hidden" name="product_id" value="101"> <!-- Change the value to the appropriate product ID -->
-        <input type="hidden" name="price" value="324.90"> <!-- Change the value to the appropriate price -->
-        <input type="hidden" name="picture" value="../Online_Tech_Store_v1/assets/IMG/b641d84456.webp">
+        <input type="hidden" name="product_id" value="103"> <!-- Change the value to the appropriate product ID -->
+        <input type="hidden" name="price" value="399,10"> <!-- Change the value to the appropriate price -->
+        <input type="hidden" name="picture" value="../Online_Tech_Store_v1/assets/IMG/headset-gamer-razer-kraken-7-1-v2-chroma-oval-usb-06ab2be1.webp">
         <input type="number" name="quantity" value="1" min="1">
         <button type="submit" name="submit" class="btn btn-danger" id="cart">Add to cart</button>
       </form>
@@ -136,7 +137,7 @@ include "config.php";
 
   <!-- Custome JS-Script -->
   <script>
-    document.getElementById('cart').addEventListener('click', function(){
+    document.getElementById('cart').addEventListener('click', function() {
       alert('The product is added to cart!!!');
     });
   </script>

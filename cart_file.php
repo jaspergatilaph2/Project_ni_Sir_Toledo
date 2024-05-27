@@ -10,15 +10,22 @@ include "config.php";
 if(isset($_POST['submit'])) {
     // Escape other form data
     $product_id = mysqli_real_escape_string($connection, $_POST['product_id']);
-    $price = mysqli_real_escape_string($connection, $_POST['price']);
+    
+    // Convert price to a format that MySQL can recognize
+    $price = str_replace(',', '.', $_POST['price']); // Replace comma with dot
+    $price = str_replace('.', '', substr($price, 0, -3)) . substr($price, -3); // Remove thousand separators
 
+    // Escape the converted price
+    $price = mysqli_real_escape_string($connection, $price);
+
+    $quantity = mysqli_real_escape_string($connection, $_POST['quantity']);
     // Check if image URL is provided
     if(isset($_POST['picture'])) {
         // Escape image URL
         $image_url = mysqli_real_escape_string($connection, $_POST['picture']);
         
         // Insert into cart table
-        $sql = "INSERT INTO cart (product_id, price, picture) VALUES ('$product_id', '$price', '$image_url')";
+        $sql = "INSERT INTO cart (product_id, price, picture, quantity) VALUES ('$product_id', '$price', '$image_url', '$quantity')";
 
         if(mysqli_query($connection, $sql)) {
             // Redirect to prevent form resubmission
@@ -32,5 +39,4 @@ if(isset($_POST['submit'])) {
         echo "Error: Image URL is missing.";
     }
 }
-
 ?>
